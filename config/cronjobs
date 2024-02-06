@@ -1,0 +1,3 @@
+* * * * * cd /opt/html/ && genRSS -d pdf -C -M -t paperPodcast -p "RSS with papers I should read" -H https://papers.nextnet.top -o papers.rss
+
+
