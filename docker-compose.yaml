@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  httpd:
+    restart: unless-stopped
+    container_name: httpd
+    build: 
+      context: .
+      dockerfile: Dockerfile.httpd
+    volumes:
+      - ./html:/home/static:rw
+    ports:
+      - 3000:3000
+    
+
+  rss:
+    container_name: rss
+    build:
+      context: .
+      dockerfile: Dockerfile.cron
+    restart: unless-stopped
+
+    volumes:
+      - ./html:/opt/html:rw
+    
